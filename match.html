@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buddy Matching</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="itinerary.html">Itinerary</a></li>
+                <li><a href="match.html">Buddy Match</a></li>
+                <li><a href="chat.html">Group Chat</a></li>
+                <li><a href="payment.html">Payment</a></li>
+                <li><a href="feedback.html">Feedback & Support</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <h1>BUDDY MATCH</h1>
+
+            <!-- Alex's Buddy Card -->
+            <div class="buddy-card">
+                <div class="buddy-info">
+                    <img src="https://png.pngtree.com/png-clipart/20200224/original/pngtree-cartoon-color-simple-male-avatar-png-image_5230557.jpg" alt="User icon" class="user-icon">
+                    <div class="info">
+                        <p><strong>Name:</strong> Alex</p>
+                        <p><strong>Email:</strong> alex@gmail.com</p>
+                        <p><strong>Interests:</strong> Culture</p>
+                        <p><strong>Places to visit:</strong> Tokyo, Thailand</p>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button onclick="handleMatch('submit-alex', 'Alex', 'Match')">Match</button>
+                    <button onclick="handleMatch('submit-alex', 'Alex', 'Reject')">Reject</button>
+                </div>
+                <div class="submit-btn" id="submit-alex" style="display: none;">
+                    <button onclick="goToChatPage()">Submit</button>
+                </div>
+                <div class="reject-message" id="reject-message-alex" style="display: none; color: red; margin-top: 10px;"></div>
+            </div>
+
+            <!-- Morgan's Buddy Card -->
+            <div class="buddy-card">
+                <div class="buddy-info">
+                    <img src="https://cdn.vectorstock.com/i/500p/20/59/woman-avatar-portrait-a-young-caucasian-vector-35392059.jpg" alt="User icon" class="user-icon">
+                    <div class="info">
+                        <p><strong>Name:</strong> Morgan</p>
+                        <p><strong>Email:</strong> morgan@gmail.com</p>
+                        <p><strong>Interests:</strong> Adventure</p>
+                        <p><strong>Places to visit:</strong> Ladakh, Dubai, New York</p>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button onclick="handleMatch('submit-morgan', 'Morgan', 'Match')">Match</button>
+                    <button onclick="handleMatch('submit-morgan', 'Morgan', 'Reject')">Reject</button>
+                </div>
+                <div class="submit-btn" id="submit-morgan" style="display: none;">
+                    <button onclick="goToChatPage()">Submit</button>
+                </div>
+                <div class="reject-message" id="reject-message-morgan" style="display: none; color: red; margin-top: 10px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to handle match/reject action and show the submit button or reject message
+        function handleMatch(submitId, name, action) {
+            const submitButton = document.getElementById(submitId);
+            const rejectMessage = document.getElementById('reject-message-' + name.toLowerCase());
+
+            if (action === 'Match') {
+                submitButton.style.display = 'block'; // Show Submit button on Match
+                rejectMessage.style.display = 'none'; // Hide Reject message
+            } else {
+                submitButton.style.display = 'none'; // Hide Submit button on Reject
+                rejectMessage.innerText = `You have rejected ${name}.`;
+                rejectMessage.style.display = 'block';
+
+                // Hide the reject message after 3 seconds
+                setTimeout(() => {
+                    rejectMessage.style.display = 'none';
+                }, 3000);
+            }
+        }
+
+        // Function to redirect to the chat page when submit button is clicked
+        function goToChatPage() {
+            window.location.href = 'chat.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,334 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial',sans-serif;
+    background-image: url('https://cdn.pixabay.com/photo/2016/01/09/18/27/camera-1130731_640.jpg'); /* Replace with your image URL */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: flex-start;
+    align-items: center; /* Center everything horizontally */
+    height: 100vh;
+    padding: 0;
+}
+
+
+
+/* Navigation Links on Left (Fixed) */
+nav {
+    position: fixed;
+    top: 5px;
+    left: 20px;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 180px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    margin-bottom: 15px;
+}
+
+nav a {
+    color: #A87676;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding: 8px 10px;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    color: #FFFFFF;
+    background-color: #A87676;
+}
+
+/* Main Heading Style */
+h1 {
+    color: #ffffff;
+    font-size: 2.8rem;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Main Content Area */
+.main-content {
+    margin-top: 40px; /* Adds space between the heading and content box */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100vh - 80px); /* Ensures content box is vertically centered in the remaining space */
+}
+
+/* Container for all pages */
+.container {
+    width: 80%;
+    max-width: 800px;
+    padding: 30px;
+    background: #FFFFFF;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    font-size: 1.1rem; /* Increased font size */
+}
+
+/* Heading and Text Styling for content inside box */
+h3, label {
+    color: #A87676;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.itinerary-form label, 
+.itinerary-form input, 
+.itinerary-form button, 
+#place-input {
+    font-size: 1.1rem;
+    width: 100%;
+    margin: 10px 0;
+}
+
+input[type="date"], input[type="text"], button {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1.1rem;
+}
+
+input[type="date"], input[type="text"] {
+    background-color: #FFF5EB;
+    color: #5F5F5F;
+}
+
+#add-place, #view-itinerary, #next-page {
+    background-color: #A87676;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #865C5C;
+}
+
+#next-page {
+    background-color: #79A88E;
+}
+
+#next-page:hover {
+    background-color: #5B8772;
+}
+
+.places-section {
+    margin-top: 20px;
+}
+
+#places-list {
+    list-style: none;
+    margin-top: 10px;
+    padding: 0;
+}
+
+#places-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8px 0;
+    padding: 10px;
+    background: #FFF0E5;
+    border-radius: 6px;
+    font-size: 1.1rem;
+}
+
+#places-list li button {
+    background: #F4978E;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#places-list li button:hover {
+    background: #D9756C;
+}
+
+#itinerary-view {
+    margin-top: 25px;
+    padding: 15px;
+    background: #FFF5EB;
+    border-radius: 8px;
+    display: none;
+    font-size: 1.2rem;
+}
+
+
+ul {
+    padding-left: 20px;
+    list-style: disc;
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container */
+.container {
+    width: 80%;
+    max-width: 800px;
+    padding: 30px;
+    background: #ffffffad;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 16vh;
+    font-size: 1.1rem; /* Increased font size */
+}
+
+
+/* Sidebar */
+.sidebar {
+    width: 200px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #6b4b3e;
+    font-weight: bold;
+}
+
+.container h3,
+.container label {
+    font-size: 1.3rem; /* Larger font size for headings */
+    color: #A87676;
+    margin-bottom: 10px;
+}
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px 40px;
+    width: 100%;
+    height: 100vh;
+}
+
+.main-content h1 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Buddy Card */
+.buddy-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    max-width: 600px;
+}
+
+.buddy-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.info p {
+    margin: 5px 0;
+    color: #555;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    background-color: #a08c8c;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    background-color: #8b7878;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        text-align: center;
+    }
+
+    .buddy-card {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .buttons {
+        flex-direction: row;
+        gap: 15px;
+    }
+}

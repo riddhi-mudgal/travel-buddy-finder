@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback & Support</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Styles for feedback page */
+        .feedback-form-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: auto; /* Allows scrolling if needed */
+        }
+
+        .feedback-form-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, textarea, select, button {
+            width: 100%; /* Ensure fields fit within the container */
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box; /* Include padding in width calculation */
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+        }
+
+        #success-message {
+            text-align: center;
+            font-size: 16px;
+            color: green;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="itinerary.html">Itinerary</a></li>
+                <li><a href="match.html">Buddy Match</a></li>
+                <li><a href="chat.html">Group Chat</a></li>
+                <li><a href="payment.html">Payment</a></li>
+                <li><a href="feedback.html">Feedback & Support</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <h1>Feedback & Support</h1>
+            <p>Your feedback is important to us! Please let us know how we can improve or assist you better.</p>
+
+            <!-- Feedback Form -->
+            <div class="feedback-form-container">
+                <form id="feedback-form" onsubmit="handleFeedbackSubmit(event)">
+                    <!-- Name Field -->
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <!-- Email Field -->
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <!-- Feedback Type Field -->
+                    <label for="feedback-type">Feedback Type:</label>
+                    <select id="feedback-type" name="feedback-type" required>
+                        <option value="" disabled selected>Select feedback type</option>
+                        <option value="suggestion">Suggestion</option>
+                        <option value="complaint">Complaint</option>
+                        <option value="query">Query</option>
+                    </select>
+
+                    <!-- Message Field -->
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                    <!-- Submit Button -->
+                    <button type="submit">Submit</button>
+                </form>
+
+                <!-- Success Message -->
+                <div id="success-message" style="display: none;">
+                    Thank you for your feedback! Redirecting to the contact page...
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <p><strong>Email:</strong> support@travelbuddyfinder.in</p>
+                <p><strong>Phone:</strong> +91 98765 43210</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to handle form submission
+        function handleFeedbackSubmit(event) {
+            event.preventDefault(); // Prevent page reload
+
+            // Display success message
+            const successMessage = document.getElementById("success-message");
+            successMessage.style.display = "block";
+
+            // Clear the form fields
+            document.getElementById("feedback-form").reset();
+
+            // Redirect to contact page after 3 seconds
+            setTimeout(() => {
+                window.location.href = "contact.html";
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

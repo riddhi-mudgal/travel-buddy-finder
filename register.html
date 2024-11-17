@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Ensure form elements are stacked vertically */
+        form input, form select, form button {
+            width: 100%; /* Full width of the container */
+            margin-bottom: 15px; /* Space between elements */
+            padding: 10px; /* Padding for input fields */
+            box-sizing: border-box; /* Include padding in element's total width */
+        }
+    </style>
+</head>
+<body>
+    <nav class="sidebar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="itinerary.html">Itinerary</a></li>
+            <li><a href="match.html">Buddy Match</a></li>
+            <li><a href="chat.html">Group Chat</a></li>
+            <li><a href="payment.html">Payment</a></li>
+            <li><a href="feedback.html">Feedback & Support</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+<header>
+    <h1>Register</h1>
+</header>
+
+<div class="container">
+    <form id="registerForm">
+        <h2 class="form-title">Create an Account</h2>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <select required>
+            <option value="">Select Your Interests</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Beach">Beach</option>
+            <option value="Culture">Culture</option>
+        </select>
+        <button type="submit">Register</button>
+        <button type="button" onclick="window.location.href='itinerary.html'">Go to Itinerary</button>
+    </form>
+</div>
+
+</body>
+<script src="script.js"></script>
+</html>
